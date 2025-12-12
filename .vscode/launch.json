@@ -1,0 +1,103 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    // ========== 开发运行配置 ==========
+    // 用于日常开发调试, 运行在 debug 模式，支持热重载。性能较低，应用体积较大，但调试体验好
+    {
+      "name": "🚀 Development",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define=APP_ENV=development",
+        "--dart-define=DEBUG=true"
+      ]
+    },
+    {
+      "name": "🧪 Staging",
+      "request": "launch", 
+      "type": "dart",
+      "args": [
+        "--dart-define=APP_ENV=staging",
+        "--dart-define=DEBUG=true"
+      ]
+    },
+    {
+      "name": "📦 Production",
+      "request": "launch",
+      "type": "dart", 
+      "args": [
+        "--dart-define=APP_ENV=production",
+        "--dart-define=DEBUG=false"
+      ]
+    },
+
+    // ========== 性能分析配置 ==========
+    // 用于性能分析和优化, 运行在 profile 模式 ，接近生产环境,不支持调试、热重载
+    {
+      "name": "📊 Development (Profile)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile",
+      "args": [
+        "--dart-define=APP_ENV=development",
+        "--dart-define=DEBUG=true"
+      ]
+    },
+    {
+      "name": "📈 Staging (Profile)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile",
+      "args": [
+        "--dart-define=APP_ENV=staging", 
+        "--dart-define=DEBUG=true"
+      ]
+    },
+
+    // ========== 打包任务配置 ==========
+    // 测试环境打包
+    {
+      "name": "🏗️ Build APK - Staging", 
+      "request": "launch",
+      "type": "dart",
+      "program": "scripts/build_runner.dart",
+      "args": [
+        "build-apk",
+        "--env=staging"
+      ]
+    },
+    // 生产环境打包
+    {
+      "name": "🏗️ Build APK - Production",
+      "request": "launch", 
+      "type": "dart",
+      "program": "scripts/build_runner.dart",
+      "args": [
+        "build-apk",
+        "--env=production"
+      ]
+    },
+    // 暂时使用不到
+    {
+      "name": "🍎 Build iOS - Production",
+      "request": "launch",
+      "type": "dart",
+      "program": "scripts/build_runner.dart", 
+      "args": [
+        "build-ios",
+        "--env=production"
+      ]
+    },
+    // 暂时使用不到
+    {
+      "name": "🌐 Build Web - Production",
+      "request": "launch",
+      "type": "dart",
+      "program": "scripts/build_runner.dart",
+      "args": [
+        "build-web", 
+        "--env=production"
+      ]
+    }
+  ]
+}
