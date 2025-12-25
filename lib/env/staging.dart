@@ -5,11 +5,11 @@ class StagingEnvironment implements AppEnvironment {
   String get name => 'staging';
 
   @override
-  String get baseUrl => 'https://pes-test.sanhuagroup.com';
+  String get baseUrl => 'https://pre.sanhuagroup.com';
 
   @override
   String get apiKey => '';
 
   @override
-  String get appName => 'PES2.0  Staging';
+  String get appName => 'App  Staging';
 }
