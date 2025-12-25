@@ -5,11 +5,11 @@ class ProductionEnvironment implements AppEnvironment {
   String get name => 'production';
   
   @override
-  String get baseUrl => 'https://pes.sanhuagroup.com';
+  String get baseUrl => 'https://pro.sanhuagroup.com';
   
   @override
   String get apiKey => '';
   
   @override
-  String get appName => 'PES2.0 Production';
+  String get appName => 'App Production';
 }
